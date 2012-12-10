@@ -818,6 +818,7 @@ void MythPianod::hateCallback()
 void MythPianod::tiredCallback()
 {
   GetMythPianoService()->TiredSong();
+  GetMythPianoService()->SkipSong();
 }
 
 void MythPianod::selectStationCallback()
