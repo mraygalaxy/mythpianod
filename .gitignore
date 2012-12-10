@@ -1,2 +1,6 @@
 Makefile
 libmythpianod.so
+*.o
+*.swp
+themenop
+moc_mythpianod.cpp
