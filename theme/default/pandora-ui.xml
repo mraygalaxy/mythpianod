@@ -110,7 +110,10 @@
             <position>650,620</position>
             <value>Hate</value>
         </button>
-
+	<button name="logoutBtn" from="basewidebutton">
+            <position>350,680</position>
+            <value>Logout</value>
+        </button>
         <textarea name="outtext">
             <area>10,500,240,500</area>
             <font>debug</font>
@@ -122,13 +125,20 @@
     </window>
 
     <window name="popup">
-	<area>-1,-1,1000,600</area>
+      <area>-1,-1,300,300</area>
       <textarea name="notification">
-            <position>0,0</position>
+            <area>-1,-1,300,60</area>
             <font>baselarge</font>
             <align>allcenter</align>
             <multiline>yes</multiline>
             <value>Something to say...</value>
+        </textarea>
+        <textarea name="outtext">
+            <area>10,500,240,500</area>
+            <font>debug</font>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+	    <value></value>
         </textarea>
     </window>
 

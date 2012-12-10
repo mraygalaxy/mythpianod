@@ -85,6 +85,10 @@ int RunPandora()
   // Setup Piano Service
   MythPianoService *service = GetMythPianoService();
 
+  /*
+  showPopupDialog();
+  GetMythMainWindow()->GetMainStack()->PopScreen(false, true);
+  */
   // try logging in here.  If it works, then don't show the login dialog.
   if (service->Login() != 0) {
     showLoginDialog();
@@ -155,9 +159,6 @@ int showStationSelectDialog()
 int showPlayerDialog()
 {
   MythScreenStack *mainStack = GetMythMainWindow()->GetMainStack();
-  showPopupDialog();
-  usleep(5000000);
-  GetMythMainWindow()->GetMainStack()->PopScreen(false, true);
   MythPianod *mythpianod = new MythPianod(mainStack, "pandora");
   
   if (mythpianod->Create()){

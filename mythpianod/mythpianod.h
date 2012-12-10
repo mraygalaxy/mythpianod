@@ -225,13 +225,13 @@ class MythPianodPopup : public MythScreenType
   Q_OBJECT
   public:
     MythPianodPopup(MythScreenStack *parent, QString name);
-    ~MythPianodPopup();
   
     bool Create(void);
-    bool keyPressEvent(QKeyEvent *);
 
   private:
     MythUIText       *m_notifyText;
+    MythUIText     *m_outText;
+  private slots:
 };
 
 

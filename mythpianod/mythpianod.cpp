@@ -99,9 +99,6 @@ void MythPianoService::BroadcastMessage(const char *format, ...)
 
   if (m_Listener)
     m_Listener->RecvMessage(buffer.ascii());
-//  showPopupDialog();
-//  usleep(1000);
-//  GetMythMainWindow()->GetMainStack()->PopScreen(false, true);
   
 }
 
@@ -251,6 +248,7 @@ int MythPianoService::RepopulateStations() {
      PianodDisconnect("Failed to retrieve station list. Bailing: " + response->back().value);
      return -1;
   }
+  service_heartbeat();
   return 0;
 }
 
@@ -322,8 +320,6 @@ int MythPianoService::Login()
   if(RepopulateStations() < 0) {
 	return -1;
   }
-
-  service_heartbeat();
 
   return 0;
 }
@@ -660,7 +656,7 @@ bool MythPianod::Create(void)
   UIUtilE::Assign(this, m_playTimeText,  "playtime", &err);
   UIUtilE::Assign(this, m_ratingText,  "rating", &err);
   UIUtilE::Assign(this, m_coverartImage, "coverart", &err);
-  //UIUtilE::Assign(this, m_logoutBtn,     "logoutBtn", &err);
+  UIUtilE::Assign(this, m_logoutBtn,     "logoutBtn", &err);
   UIUtilE::Assign(this, m_unloveBtn,     "unloveBtn", &err);
   UIUtilE::Assign(this, m_skipBtn,     "skipBtn", &err);
   UIUtilE::Assign(this, m_hateBtn,     "hateBtn", &err);
@@ -674,7 +670,7 @@ bool MythPianod::Create(void)
     return false;
   }
 
-  //connect(m_logoutBtn, SIGNAL(Clicked()), this, SLOT(logoutCallback()));
+  connect(m_logoutBtn, SIGNAL(Clicked()), this, SLOT(logoutCallback()));
   connect(m_unloveBtn, SIGNAL(Clicked()), this, SLOT(unloveCallback()));
   connect(m_skipBtn, SIGNAL(Clicked()), this, SLOT(skipCallback()));
   connect(m_tiredBtn, SIGNAL(Clicked()), this, SLOT(tiredCallback()));
@@ -890,14 +886,14 @@ bool MythPianodPopup::Create()
 
   bool err = false;
   UIUtilE::Assign(this, m_notifyText, "notification",  &err);
+  UIUtilE::Assign(this, m_outText,    "outtext", &err);
   if (err) {
     LOG(VB_GENERAL, LOG_ERR, "Cannot load screen 'popup'");
     return false;
   }
 
-  BuildFocusList();
+  //BuildFocusList();
   m_notifyText->SetText("something else to say ....");
-  printf("made it this far...\n");
   return true;
 }
 
@@ -908,19 +904,6 @@ MythPianodConfig::~MythPianodConfig()
 }
 
 bool MythPianodConfig::keyPressEvent(QKeyEvent *event)
-{
-    if (GetFocusWidget()->keyPressEvent(event))
-        return true;
-
-    bool handled = false;
-
-    if (!handled && MythScreenType::keyPressEvent(event))
-        handled = true;
-
-    return handled;
-}
-
-bool MythPianodPopup::keyPressEvent(QKeyEvent *event)
 {
     if (GetFocusWidget()->keyPressEvent(event))
         return true;
