@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+    <window name="pandora">
+
+      <fontdef name="debug" face="Arial">
+	<pixelsize>12</pixelsize>
+	<color>#ffffff</color>
+      </fontdef>
+
+      <fontdef name="song" face="Arial">
+	<pixelsize>26</pixelsize>
+	<color>#ffffff</color>
+      </fontdef>
+
+      <fontdef name="other" face="Arial">
+	<pixelsize>20</pixelsize>
+	<color>#ffffff</color>
+      </fontdef>
+
+        <textarea name="title">
+            <position>1000,1000</position>
+            <value>Myth Pianod</value>
+        </textarea>
+
+        <textarea name="station">
+            <position>1000,1000</position>
+            <font>large</font>
+        </textarea>
+
+        <imagetype name="coverart">
+          <area>60,100,300,300</area>
+          <filename>/usr/share/app-install/icons/_usr_share_icons_hicolor_scalable_apps_emacs23.png</filename>
+        </imagetype>
+
+        <textarea name="song">
+            <area>470,100,400,150</area>
+            <font>song</font>
+            <align>left</align>
+            <multiline>no</multiline>
+	    <value>No song title, yet.</value>
+        </textarea>
+
+        <textarea name="artist">
+            <area>470,150,400,150</area>
+            <font>other</font>
+            <align>left</align>
+            <multiline>no</multiline>
+	    <value>No artist, yet.</value>
+        </textarea>
+
+        <textarea name="album">
+            <area>470,200,400,150</area>
+            <font>other</font>
+            <align>left</align>
+            <multiline>no</multiline>
+	    <value>No album name, yet</value>
+        </textarea>
+
+        <textarea name="stationname">
+            <area>470,250,400,150</area>
+            <font>other</font>
+            <align>left</align>
+            <multiline>no</multiline>
+	    <value>No station name, yet</value>
+        </textarea>
+
+        <textarea name="playtime">
+            <area>470,300,400,150</area>
+            <font>other</font>
+            <align>left</align>
+            <multiline>no</multiline>
+	    <value>0:00</value>
+        </textarea>
+
+        <textarea name="rating">
+            <area>470,375,400,150</area>
+            <font>other</font>
+            <align>left</align>
+            <multiline>no</multiline>
+	    <value>don't know yet</value>
+        </textarea>
+
+	<button name="unloveBtn" from="basewidebutton">
+            <position>50,560</position>
+            <value>Unlove</value>
+        </button>
+
+	<button name="stationsBtn" from="basewidebutton">
+            <position>350,560</position>
+            <value>Select Station</value>
+        </button>
+
+	<button name="skipBtn" from="basewidebutton">
+            <position>650,560</position>
+            <value>Skip</value>
+        </button>
+
+	<button name="tiredBtn" from="basewidebutton">
+            <position>50,620</position>
+            <value>Tired</value>
+        </button>
+
+	<button name="loveBtn" from="basewidebutton">
+            <position>350,620</position>
+            <value>Love</value>
+        </button>
+
+	<button name="hateBtn" from="basewidebutton">
+            <position>650,620</position>
+            <value>Hate</value>
+        </button>
+
+        <textarea name="outtext">
+            <area>10,500,240,500</area>
+            <font>debug</font>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+	    <value></value>
+        </textarea>
+
+    </window>
+
+    <window name="popup">
+	<area>-1,-1,1000,600</area>
+      <textarea name="notification">
+            <position>0,0</position>
+            <font>baselarge</font>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+            <value>Something to say...</value>
+        </textarea>
+    </window>
+
+    <window name="pandorasettings">
+      <textarea name="title">
+            <area>10,10,780,60</area>
+            <font>baselarge</font>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+            <value>Pandora Settings</value>
+        </textarea>
+
+      <textarea name="description">
+            <area>10,80,780,120</area>
+            <font>small</font>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+            <value>Please enter your Pianod username and password (not your Pandora account). You should have configured Pianod to already know your Pandora username/password internally.</value>
+        </textarea>
+
+
+        <textarea name="username_area" from="basetextarea">
+          <area>100,335,780,60</area>
+          <value>Username:</value>
+	</textarea>
+
+        <textedit name="username" from="basetextedit">
+            <position>200,325</position>
+        </textedit>
+
+        <textarea name="password_area" from="basetextarea">
+          <area>100,435,780,60</area>
+          <value>Password:</value>
+	</textarea>
+
+        <textedit name="password" from="basetextedit">
+          <position>200,425</position>
+        </textedit>
+
+	<button name="loginBtn" from="basewidebutton">
+            <position>200,560</position>
+            <value>Login</value>
+        </button>
+
+        <textarea name="outtext">
+            <area>10,500,500,500</area>
+            <font>debug</font>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+	    <value></value>
+        </textarea>
+        
+    </window>
+
+
+    <window name="pandorastations">
+      <textarea name="title">
+            <area>10,10,780,200</area>
+            <font>baselarge</font>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+            <value>Pandora Stations</value>
+        </textarea>
+
+        <buttonlist name="stations" from="basebuttonlist">
+	    <area>250,150,349,450</area>
+            <align>allcenter</align>
+        </buttonlist>
+        
+    </window>
+
+</mythuitheme>
