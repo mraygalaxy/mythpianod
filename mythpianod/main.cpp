@@ -1,6 +1,7 @@
 /*
-Copyright (c) 2010
-	Doug Turner < dougt@dougt.org >
+Copyright (c) 2012
+Michael R. Hines <michael@hinespot.com>
+Modified from: Doug Turner < dougt@dougt.org >
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
