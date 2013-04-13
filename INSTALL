@@ -1,4 +1,7 @@
-move this directory into mythplugins/
+You must first download mythtv source code before attempting to compile this plugin. (https://github.com/MythTV/mythtv)
+You must also have installed Pianod before attempting to run this plugin (http://deviousfish.com/pianod/)
+
+Once mythtv is compiled, then download the plugin and move it to mythtv/mythplugins/
 
 run:
  qmake
